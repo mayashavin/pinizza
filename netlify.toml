@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  functions="functions"
+  publish = "./dist"
+
+[dev]
+  functions="functions"
+  publish="public"
+  command="npm run dev"
