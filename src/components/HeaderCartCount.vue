@@ -6,10 +6,11 @@
   </div>
 </template>
 <script>
-import { useCart } from '../stores/useCart.js'
 export default {
   setup() {
-    const cart = useCart();
+    const cart = {
+      cartCount: 0
+    }
     return {
       cart
     };

@@ -32,11 +32,33 @@
   <div v-else>No item in your cart yet.</div>
 </template>
 <script>
-import { useCart } from '../stores/useCart.js'
 
 export default {
   setup() {
-    const cart = useCart();
+    const cart = {
+      cartItems: [],
+      cartCount: 0,
+      cartTotal: 0,
+      addItem(item) {
+        this.cartItems.push(item);
+        this.cartCount += item.quantity;
+        this.cartTotal += item.quantity * (+item.price);
+      },
+      removeItem(item) {
+        this.cartItems = this.cartItems.filter(i => i.id !== item.id);
+        this.cartCount -= item.quantity;
+        this.cartTotal -= item.quantity * (+item.price);
+      },
+      clearCart() {
+        this.cartItems = [];
+        this.cartCount = 0;
+        this.cartTotal = 0;
+      },
+      makePayment(items) {
+        alert(`You have ordered ${items.length} items for a total of $${this.cartTotal}.`);
+      }
+    };
+    
     return {
       cart
     };

@@ -16,19 +16,15 @@
 </template>
 
 <script>
-import { onMounted } from '@vue/runtime-core'
-import { usePizzas } from '../stores/usePizzas.js'
-import { useCart } from '../stores/useCart.js'
-
 export default {
   setup() {
-    const store = usePizzas()
-    const cart = useCart()
-    window.stores = { pizzaStore: store, cart }
+    const store = {
+      pizzasGallery: []
+    }
 
-    onMounted(async () => {
-      await store.fetchPizzas()
-    })
+    const cart = {
+      addItem: () => {}
+    }
 
     return {
       store,
