@@ -8,10 +8,14 @@
     "start:server": "netlify-lambda serve functions -c ./webpack.config.js"
   },
   "dependencies": {
+    "@xstate/graph": "^1.4.0",
+    "@xstate/inspect": "^0.6.1",
+    "@xstate/vue": "^0.8.1",
     "cloudinary-build-url": "^0.2.4",
     "pinia": "^2.0.9",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.12"
+    "vue-router": "^4.0.12",
+    "xstate": "^4.28.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.0.0",
